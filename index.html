@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Bookshelf App</h1>
+        <button id="darkModeToggle" class="dark-toggle">🌙</button>
+      </div>
+
+      <form id="bookForm">
+        <input type="text" id="title" placeholder="Judul Buku" required />
+        <input type="text" id="author" placeholder="Penulis" required />
+        <input type="number" id="year" placeholder="Tahun" required />
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="isComplete" />
+          <label for="isComplete">Tandai sebagai selesai dibaca</label>
+        </div>
+
+        <button type="submit" id="submitBtn">Tambah Buku</button>
+        <button type="button" id="cancelEditBtn" class="cancel-btn" hidden>
+          Batal Edit
+        </button>
+      </form>
+
+      <div class="search-bar">
+        <div class="search-input">
+          🔍
+          <input
+            type="text"
+            id="searchBook"
+            placeholder="Cari buku favoritmu..."
+          />
+        </div>
+
+        <select id="filterStatus">
+          <option value="all">Semua</option>
+          <option value="complete">Selesai Dibaca</option>
+          <option value="incomplete">Belum Selesai Dibaca</option>
+        </select>
+      </div>
+
+      <div class="list-section">
+        <h2>Belum Selesai Dibaca</h2>
+        <div id="incompleteBooks"></div>
+      </div>
+
+      <div class="list-section">
+        <h2>Selesai Dibaca</h2>
+        <div id="completeBooks"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite" role="status"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
